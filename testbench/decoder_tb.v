@@ -1,9 +1,11 @@
+`include "decoder.v"
+
 module decoder_tb;
     parameter BIT_WIDTH = 20;
     reg [BIT_WIDTH-1:0] input_bits;
     wire [BIT_WIDTH-1:0] output_bits;
 
-    decoder dut(
+    decoder_20x1048576 dut(
         .input_bits(input_bits),
         .output_bits(output_bits)
     );

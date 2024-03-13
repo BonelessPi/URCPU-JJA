@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`include "and_gate.v"
 
 module and_gate_tb;
     parameter DELAY = 10;

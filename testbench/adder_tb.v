@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`include "adder.v"
 
 module adder_tb;
     parameter DATA_WIDTH = 20;
