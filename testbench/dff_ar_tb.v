@@ -1,15 +1,15 @@
-`include "dff_sr.v"
+`include "dff_ar.v"
 
-module testbench_dff_sr;
+module dff_ar_tb;
     reg clk;
     reg reset;
     reg d;
     wire q;
 
     integer i;
-    integer SEED = 7132;
+    integer SEED = 458;
 
-    dff_sr d0 (
+    dff_ar d0 (
         .clk (clk),
         .reset (reset),
         .d (d),
@@ -21,7 +21,7 @@ module testbench_dff_sr;
         d <= 0;
         reset <= 0;
 
-        $dumpfile("testbench_dff_sr.vcd");
+        $dumpfile("dff_ar_tb.vcd");
         $dumpvars(1,d0);
 
         for (i = 0; i < 25; i++) begin

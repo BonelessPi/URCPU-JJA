@@ -1,6 +1,6 @@
 `include "multiplexor.v"
 
-module testbench_multiplexor;
+module multiplexor_tb;
     reg [19:0] data;
     reg [4:0] addr;
     wire out;
@@ -18,7 +18,7 @@ module testbench_multiplexor;
 
     initial begin
 
-        $dumpfile("testbench_multiplexor.vcd");
+        $dumpfile("multiplexor_tb.vcd");
         $dumpvars(1,m0);
 
         for (i = 0; i < 32; i++) begin

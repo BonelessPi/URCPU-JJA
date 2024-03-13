@@ -1,17 +1,15 @@
-`include "dff_ar.v"
+`include "dff.v"
 
-module testbench_dff_ar;
+module dff_tb;
     reg clk;
-    reg reset;
     reg d;
     wire q;
 
     integer i;
-    integer SEED = 458;
+    integer SEED = 1712;
 
-    dff_ar d0 (
+    dff d0 (
         .clk (clk),
-        .reset (reset),
         .d (d),
         .q (q)
     );
@@ -19,18 +17,15 @@ module testbench_dff_ar;
     initial begin
         clk <= 0;
         d <= 0;
-        reset <= 0;
 
-        $dumpfile("testbench_dff_ar.vcd");
+        $dumpfile("dff_tb.vcd");
         $dumpvars(1,d0);
 
         for (i = 0; i < 25; i++) begin
             d <= $urandom(SEED);
             #1
             clk <= i%2;
-            #1;
-            reset <= $urandom(SEED);
-            #1;
+            #3;
         end
 
     end

@@ -1,6 +1,6 @@
 `include "increment.v"
 
-module testbench_increment;
+module increment_tb;
     reg [19:0] in;
     wire [19:0] out;
 
@@ -14,7 +14,7 @@ module testbench_increment;
     );
 
     initial begin
-        $dumpfile("testbench_increment.vcd");
+        $dumpfile("increment_tb.vcd");
         $dumpvars(1,s);
 
         for (i = 0; i < NUM_ITERS; i++) begin

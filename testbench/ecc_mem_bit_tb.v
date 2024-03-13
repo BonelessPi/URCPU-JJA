@@ -1,6 +1,6 @@
 `include "ecc_mem_bit.v"
 
-module testbench_ecc_mem_bit;
+module ecc_mem_bit_tb;
     reg clk;
     reg inp;
     wire val;
@@ -20,7 +20,7 @@ module testbench_ecc_mem_bit;
         clk <= 0;
         inp <= 0;
 
-        $dumpfile("testbench_ecc_mem_bit.vcd");
+        $dumpfile("ecc_mem_bit_tb.vcd");
         $dumpvars(1,mem);
 
         for (i = 1; i <= 25; i++) begin

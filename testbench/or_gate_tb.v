@@ -1,6 +1,6 @@
-`include "or.v"
+`include "or_gate.v"
 
-module testbench_or;
+module or_gate_tb;
     reg [19:0] a;
     reg [19:0] b;
     wire [19:0] c;
@@ -10,7 +10,7 @@ module testbench_or;
     integer NUM_ITERS = 10;
     integer SEED = 49448;
 
-    or_word x0 (
+    or_gate x0 (
         .a (a),
         .b (b),
         .c (c),
@@ -21,7 +21,7 @@ module testbench_or;
         a <= 0;
         b <= 0;
 
-        $dumpfile("testbench_or.vcd");
+        $dumpfile("or_gate_tb.vcd");
         $dumpvars(1,x0);
         $monitor("a: 0b%0b - b: 0b%0b - c: 0b%0b - zero: 0b%0b", a, b, c, zero);
 

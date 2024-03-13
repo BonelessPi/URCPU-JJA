@@ -1,6 +1,6 @@
 `include "swap.v"
 
-module testbench_swap;
+module swap_tb;
     reg [19:0] i_1;
     reg [19:0] i_2;
     wire [19:0] o_1;
@@ -18,7 +18,7 @@ module testbench_swap;
     );
 
     initial begin
-        $dumpfile("testbench_swap.vcd");
+        $dumpfile("swap_tb.vcd");
         $dumpvars(1,s);
 
         for (i = 0; i < NUM_ITERS; i++) begin

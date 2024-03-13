@@ -1,7 +1,7 @@
-TESTBENCH=testbench_or
+TESTBENCH=or_gate_tb
 
 all:
-	iverilog -o $(TESTBENCH).vvp $(TESTBENCH).v
+	iverilog -o $(TESTBENCH).vvp testbench/$(TESTBENCH).v
 	vvp $(TESTBENCH).vvp $(TESTBENCH).vcd
 	gtkwave $(TESTBENCH).vcd
 
