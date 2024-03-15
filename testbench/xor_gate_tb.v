@@ -1,6 +1,6 @@
-`include "or_gate.v"
+`include "xor_gate.v"
 
-module or_gate_tb;
+module xor_gate_tb;
     reg [19:0] a;
     reg [19:0] b;
     wire [19:0] c;
@@ -9,7 +9,7 @@ module or_gate_tb;
     integer NUM_ITERS = 10;
     integer SEED = 49448;
 
-    or_gate x0 (
+    xor_gate x0 (
         .a (a),
         .b (b),
         .c (c)
@@ -19,7 +19,7 @@ module or_gate_tb;
         a <= 0;
         b <= 0;
 
-        $dumpfile("or_gate_tb.vcd");
+        $dumpfile("xor_gate_tb.vcd");
         $dumpvars(1,x0);
 
         for (i = 0; i < NUM_ITERS; i++) begin

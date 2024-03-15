@@ -1,14 +1,5 @@
-module adder(input [19:0] a,
-                   input [19:0] b,
-                   input carry_in,
-                   output reg [19:0] sum,
-                   output reg carry_out);
+module adder(input wire [19:0] a, input wire [19:0] b, input wire carry_in, output wire [19:0] sum, output wire carry_out);
 
-reg [19:0] sum_temp;
-
-always @(*) begin
-    {carry_out, sum_temp} = a + b + carry_in;
-    sum = sum_temp;
-end
+    assign {carry_out, sum} = a + b + carry_in;
 
 endmodule

@@ -1,26 +1,33 @@
-`include "or_gate.v"
+`include "comparison.v"
 
-module or_gate_tb;
+module comparison_tb;
     reg [19:0] a;
     reg [19:0] b;
-    wire [19:0] c;
+    wire lt;
+    wire eq;
+    wire gt;
+    wire le = !gt;
+    wire ne = !eq;
+    wire ge = !lt;
 
     integer i;
     integer NUM_ITERS = 10;
     integer SEED = 49448;
 
-    or_gate x0 (
+    comparison c0 (
         .a (a),
         .b (b),
-        .c (c)
+        .lt (lt),
+        .eq (eq),
+        .gt (gt)
     );
 
     initial begin
         a <= 0;
         b <= 0;
 
-        $dumpfile("or_gate_tb.vcd");
-        $dumpvars(1,x0);
+        $dumpfile("comparison_tb.vcd");
+        $dumpvars(1,comparison_tb);
 
         for (i = 0; i < NUM_ITERS; i++) begin
             #10;
