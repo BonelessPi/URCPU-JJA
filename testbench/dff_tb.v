@@ -3,6 +3,7 @@
 module dff_tb;
     reg clk;
     reg d;
+    reg WE;
     wire q;
 
     integer i;
@@ -10,6 +11,7 @@ module dff_tb;
 
     dff d0 (
         .clk (clk),
+        .WE (WE),
         .d (d),
         .q (q)
     );
@@ -23,9 +25,9 @@ module dff_tb;
 
         for (i = 0; i < 25; i++) begin
             d <= $urandom(SEED);
-            #1
+            WE <= $urandom(SEED);
             clk <= i%2;
-            #3;
+            #1;
         end
 
     end

@@ -47,7 +47,6 @@ module demultiplexor_tb;
     );
 
     initial begin
-
         $dumpfile("demultiplexor_tb.vcd");
         $dumpvars(1,m0);
 

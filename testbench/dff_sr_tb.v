@@ -32,7 +32,6 @@ module dff_sr_tb;
             reset <= $urandom(SEED);
             #1;
         end
-
     end
 
 endmodule

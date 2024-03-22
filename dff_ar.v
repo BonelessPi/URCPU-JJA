@@ -6,5 +6,9 @@ module dff_ar(input clk, input reset, input d, output reg q);
         else
             q <= d;
     end
+
+    initial begin
+        q <= 0;
+    end
                 
 endmodule

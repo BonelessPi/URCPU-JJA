@@ -10,10 +10,10 @@ module multiplexor_tb;
     integer NUM_ITERS = 10;
 
     multiplexor_16x20_4_20 mul (
-        .a(a), .b(b), .c(c), .d(d),
-        .e(e), .f(f), .g(g), .h(h),
-        .i(i), .j(j), .k(k), .l(l),
-        .m(m), .n(n), .o(o), .p(p),
+        .in0(a), .in1(b), .in2(c), .in3(d),
+        .in4(e), .in5(f), .in6(g), .in7(h),
+        .in8(i), .in9(j), .in10(k), .in11(l),
+        .in12(m), .in13(n), .in14(o), .in15(p),
         .addr(addr),
         .out(out)
     );

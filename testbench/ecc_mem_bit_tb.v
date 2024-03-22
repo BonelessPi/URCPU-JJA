@@ -2,8 +2,9 @@
 
 module ecc_mem_bit_tb;
     reg clk;
-    reg inp;
-    wire val;
+    reg WE;
+    reg in;
+    wire out;
     wire err;
 
     integer i;
@@ -11,22 +12,24 @@ module ecc_mem_bit_tb;
 
     ecc_mem_bit mem (
         .clk (clk),
-        .inp (inp),
-        .val (val),
+        .WE (WE),
+        .in (in),
+        .out (out),
         .err (err)
     );
 
     initial begin
         clk <= 0;
-        inp <= 0;
+        in <= 0;
 
         $dumpfile("ecc_mem_bit_tb.vcd");
         $dumpvars(1,mem);
 
         for (i = 1; i <= 25; i++) begin
+            WE <= $urandom(SEED);
             clk <= i%2;
             #2;
-            inp <= $urandom(SEED);
+            in <= $urandom(SEED);
             #2;
         end
 
