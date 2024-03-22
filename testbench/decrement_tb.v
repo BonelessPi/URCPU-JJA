@@ -3,6 +3,7 @@
 module decrement_tb;
     reg [19:0] in;
     wire [19:0] out;
+    wire carry_out;
 
     integer i;
     integer NUM_ITERS = 10;
@@ -10,7 +11,8 @@ module decrement_tb;
 
     decrement_module s (
         .in (in),
-        .out (out)
+        .out (out),
+        .carry_out(carry_out)
     );
 
     initial begin
@@ -21,6 +23,8 @@ module decrement_tb;
             in <= $urandom(SEED);
             #10;
         end
+        in <= 0;
+        #10;
 
     end
 

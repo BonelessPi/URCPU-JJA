@@ -1,5 +1,5 @@
-module decrement_module(input wire [19:0] in, output wire [19:0] out);
+module decrement_module(input wire [19:0] in, output wire [19:0] out, output wire carry_out);
 
-    assign out = in-1;
+    assign {carry_out, out} = in-1;
 
 endmodule
